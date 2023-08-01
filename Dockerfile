@@ -1,0 +1,25 @@
+FROM python:3.9-alpine3.13
+LABEL maintainer="yadavaalok"
+
+# Install system dependencies
+RUN apk add --no-cache build-base
+
+# Copy requirements file
+COPY ./requirements.txt /requirements.txt
+COPY ./app /app
+
+WORKDIR /app
+
+EXPOSE 8000
+
+# Create a Python virtual environment named /py
+RUN python -m venv /py
+
+
+RUN python -m venv /py && \
+    /py/bin/pip install --upgrade pip && \
+    /py/bin/pip install -r /requirements.txt
+
+# set the path
+ENV PATH="/scripts:/py/bin:$PATH"
+
