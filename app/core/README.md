@@ -1,0 +1,1 @@
+This App is created to define the models and for app management commands
