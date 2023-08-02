@@ -12,14 +12,13 @@ WORKDIR /app
 
 EXPOSE 8000
 
-# Create a Python virtual environment named /py
-RUN python -m venv /py
-
-
 RUN python -m venv /py && \
     /py/bin/pip install --upgrade pip && \
-    /py/bin/pip install -r /requirements.txt
+    apk add --update --no-cache postgresql-client && \
+    apk add --update --no-cache --virtual .tmp-build-deps \
+        build-base postgresql-dev musl-dev && \
+    /py/bin/pip install -r /requirements.txt && \
+    apk del .tmp-build-deps
 
 # set the path
 ENV PATH="/scripts:/py/bin:$PATH"
-
