@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+      <!-- First Metric -->
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body" id="card-title">
+            <h5 class="card-title">Upcoming Events</h5>
+            <ul class="card-text">
+                <a href="#"> <li>Event 1|25th Aug 2023| 4:00pm</li> </a>
+                <a href="#"> <li>Event 1|25th Aug 2023| 4:00pm</li> </a>
+                <a href="#"> <li>Event 1|25th Aug 2023| 4:00pm</li> </a>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Second Metric -->
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body" id="card-title">
+            <h5 class="card-title">Events in present Month</h5>
+            <ul class="card-text">
+                <a href="#"> <li>Event 1|25th Aug 2023| 4:00pm</li> </a>
+                <a href="#"> <li>Event 1|25th Aug 2023| 4:00pm</li> </a>
+                <a href="#"> <li>Event 1|25th Aug 2023| 4:00pm</li> </a>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-3">  
+      <!-- Third Metric -->
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body" id="card-title">
+            <h5 class="card-title">Rescheduled/Cancelled Events</h5>
+            <ul class="card-text">
+                <a href="#"> <li>Event 1|25th Aug 2023| 4:00pm</li> </a>
+                <a href="#"> <li>Event 1|25th Aug 2023| 4:00pm</li> </a>
+                <a href="#"> <li>Event 1|25th Aug 2023| 4:00pm</li> </a>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fourth Metric -->
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body" id="card-title">
+            <h5 class="card-title">Events Piechart</h5>
+            <canvas id="myPieChart" height="50" width="50"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
