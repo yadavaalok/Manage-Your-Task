@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} All Events {% endblock %}
+
+{% block content %}
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+
+        <button type="button" id="sidebarCollapse" class="navbar-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>&nbsp;&nbsp;
+        <input type="text" id="myInput" class="form-control" placeholder="search....">&nbsp;&nbsp;
+    </div>
+</nav>
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Event Name</th>
+                <th>Event Type</th>
+                <th>Event Date</th>
+                <th>Event Description</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for event in events %}
+            <tr>
+                <td>{{event.event_title}}</td>
+                <td>{{event.event_type}}</td>
+                <td>{{event.event_date}}</td>
+                <td>{{event.event_description}}</td>
+                <td>
+                    <a href="{% url 'editevent' event.pk %}" class="btn btn-primary">Edit</a>
+                    <form action="{% url 'delete' event.pk %}" method="POST" class="d-inline">
+                    {% csrf_token %}
+                    <input type="submit" class="btn btn-danger" value="Delete">
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
+

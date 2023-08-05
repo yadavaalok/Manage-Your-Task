@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Add Event {% endblock %}
+
+{% block content %}
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+
+        <button type="button" id="sidebarCollapse" class="navbar-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>&nbsp;&nbsp;
+        <input type="text" id="myInput" class="form-control" placeholder="search....">&nbsp;&nbsp;
+        <a href="/event/allevents" class="btn" id="newevent">All Events</a>
+    </div>
+</nav>
+<div class="container mt-5">
+    <h2>Create New Event</h2>
+    <form method="POST" action="/event/addevent">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="title">Event Title</label>
+            <input type="text" class="form-control" id="title" name="title" required>
+        </div>
+
+        <div class="form-group">
+            <label for="eventtype">Event Type</label>
+            <select class="form-control" id="eventtype" name="eventtype">
+                <option value="">Select Event Type</option>
+                <option value="conference">Conferences</option>
+                <option value="seminar">Seminars</option>
+                <option value="company">Company Party/Meetings</option>
+                <option value="product">Product/Service Launch</option>
+                <option value="wedding">Weddings</option>
+                <option value="festival">Festivals</option>
+                <option value="exhibition">Exhibitions</option>
+                <option value="charity">Charity Events</option>
+                <option value="sport">Sports & Competitions</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="datetime">Event Date & Time</label>
+            <input type="datetime-local" class="form-control" id="datetime" name="datetime" required>
+        </div>
+
+        <div class="form-group">
+            <label for="description">Event Description</label>
+            <input type="text" class="form-control" id="description" name="description" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Create</button>
+    </form>
+</div>
+{% endblock %}
+
