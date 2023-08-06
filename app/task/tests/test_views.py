@@ -25,6 +25,7 @@ class TestViews(TestCase):
         payload = {
             "title" : "Sample Event Title",
             "eventtype" : "Exhibition",
+            "eventstatus": "ACTIVE",
             "datetime": "2023-08-04T04:00",
             "description": "Sample Description"
         }
