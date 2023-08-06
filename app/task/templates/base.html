@@ -36,55 +36,30 @@
                     <a href="#events" data-toggle="collapse" aria-expanded="false" class=" dropdown-toggle"><b>Events</b></a>
                     <ul class="collapse list-unstyled" id="events">
                         <li>
-                            <a href="/event/allevents"><b> All Events </b></a>
+                            <a href="{% url 'allevents' 'all' %}"><b> All Events </b></a>
                         </li>
                         <li>
-                            <a href="#corporatesubmenu" data-toggle="collapse" aria-expanded="false" class=" dropdown-toggle"><b>Corporate Events</b></a>
-                            <ul class="collapse list-unstyled" id="corporatesubmenu">
-                                <li>
-                                    <a href="student/admission/new_admission.html">Conferences</a>
-                                </li>
-                                <li>
-                                    <a href="student/admission/all_admission.html">Seminars</a>
-                                </li>
-                                <li>
-                                    <a href="student/admission/cancel_admission.html">Company party or meetings</a>
-                                </li>
-								<li>
-                                    <a href="student/admission/cancel_admission.html">Product or Service launch</a>
-                                </li>
-                            </ul>
+                            <a href="{% url 'allevents' 'corporate' %}"><b>Corporate Events</b></a>
                         </li>
                         <li>
-                            <a href="#noncorporatesubmenu" data-toggle="collapse" aria-expanded="false" class=" dropdown-toggle"><b>Non-Corporate Events</b></a>
-							<ul class="collapse list-unstyled" id="noncorporatesubmenu">
-                                <li>
-                                    <a href="student/admission/new_admission.html">Weddings</a>
-                                </li>
-                                <li>
-                                    <a href="student/admission/all_admission.html">Festivals</a>
-                                </li>
-                                <li>
-                                    <a href="student/admission/cancel_admission.html">Exhibitions</a>
-                                </li>
-								<li>
-                                    <a href="student/admission/cancel_admission.html">Charity Events</a>
-                                </li>
-								<li>
-                                    <a href="student/admission/cancel_admission.html">Sports & Competitions</a>
-                                </li>
-                            </ul>
+                            <a href="{% url 'allevents' 'noncorporate' %}"><b>Non-Corporate Events</b></a>
                         </li>
                     </ul>
                 </li>
                 <li>
-                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><b>Rescheduled/Cancelled Events</b></a>
+                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><b>Events Status</b></a>
                     <ul class="collapse list-unstyled" id="pageSubmenu">
                         <li>
-                            <a href="#"><b>Rescheduled Events</b></a>
+                            <a href="{% url 'eventstatus' 'ACTIVE' %}"><b>ACTIVE</b></a>
                         </li>
                         <li>
-                            <a href="#"><b>Cancelled Events</b></a>
+                            <a href="{% url 'eventstatus' 'DONE' %}"><b>DONE</b></a>
+                        </li>
+                        <li>
+                            <a href="{% url 'eventstatus' 'UNKNOWN' %}"><b>UNKNOWN</b></a>
+                        </li>
+                        <li>
+                            <a href="{% url 'eventstatus' 'CANCELLED' %}"><b>CANCELLED</b></a>
                         </li>
                     </ul>
                 </li>
@@ -115,6 +90,8 @@
     <!-- Font Awesome JS -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 </body>
 

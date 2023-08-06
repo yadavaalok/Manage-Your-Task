@@ -26,7 +26,7 @@ position: 'bottom',
 };
 
 // Get the canvas element
-var ctx = document.getElementById('myPieChart').getContext('2d');
+var ctx = document.getElementById('myPieChart');
 
 // Create the pie chart
 var myPieChart = new Chart(ctx, {
@@ -34,3 +34,6 @@ type: 'pie',
 data: pieData,
 options: pieOptions
 });
+
+
+// Prevent reload of page when clicking on dropdown options

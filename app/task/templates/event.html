@@ -27,17 +27,28 @@
 
         <div class="form-group">
             <label for="eventtype">Event Type</label>
-            <select class="form-control" id="eventtype" name="eventtype">
+            <select class="form-control" id="eventtype" name="eventtype" required>
                 <option value="">Select Event Type</option>
-                <option value="conference">Conferences</option>
-                <option value="seminar">Seminars</option>
-                <option value="company">Company Party/Meetings</option>
-                <option value="product">Product/Service Launch</option>
-                <option value="wedding">Weddings</option>
-                <option value="festival">Festivals</option>
-                <option value="exhibition">Exhibitions</option>
-                <option value="charity">Charity Events</option>
-                <option value="sport">Sports & Competitions</option>
+                <option value="Conferences">Conferences</option>
+                <option value="Seminars">Seminars</option>
+                <option value="Company Party/Meetings">Company Party/Meetings</option>
+                <option value="Product/Service Launch">Product/Service Launch</option>
+                <option value="Weddings">Weddings</option>
+                <option value="Festivals">Festivals</option>
+                <option value="Exhibitions">Exhibitions</option>
+                <option value="Charity Events">Charity Events</option>
+                <option value="Sports & Competitions">Sports & Competitions</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="eventstatus">Event Status</label>
+            <select class="form-control" id="eventstatus" name="eventstatus" required>
+                <option value="">Select Event Status</option>
+                <option value="ACTIVE">ACTIVE</option>
+                <option value="DONE">DONE</option>
+                <option value="UNKNOWN">UNKNOWN</option>
+                <option value="CANCELLED">CANCELLED</option>
             </select>
         </div>
 

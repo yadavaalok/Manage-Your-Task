@@ -42,6 +42,17 @@
         </div>
 
         <div class="form-group">
+            <label for="eventstatus">Event Status</label>
+            <select class="form-control" id="eventstatus" name="eventstatus" value="{{event.event_status}}" required>
+                <option value="{{event.event_status}}">{{event.event_status}}</option>
+                <option value="ACTIVE">ACTIVE</option>
+                <option value="DONE">DONE</option>
+                <option value="UNKNOWN">UNKNOWN</option>
+                <option value="CANCELLED">CANCELLED</option>
+            </select>
+        </div>
+
+        <div class="form-group">
             <label for="datetime">Event Date & Time</label>
             <input type="datetime-local" class="form-control" id="datetime" name="datetime" value="{{event.event_date}}" required>
         </div>

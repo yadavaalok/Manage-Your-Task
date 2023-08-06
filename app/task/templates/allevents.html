@@ -19,8 +19,9 @@
     <table class="table table-striped">
         <thead>
             <tr>
-                <th>Event Name</th>
+                <th>Event Title</th>
                 <th>Event Type</th>
+                <th>Event Status</th>
                 <th>Event Date</th>
                 <th>Event Description</th>
                 <th>Actions</th>
@@ -31,10 +32,11 @@
             <tr>
                 <td>{{event.event_title}}</td>
                 <td>{{event.event_type}}</td>
+                <td>{{event.event_status}}</td>
                 <td>{{event.event_date}}</td>
                 <td>{{event.event_description}}</td>
                 <td>
-                    <a href="{% url 'editevent' event.pk %}" class="btn btn-primary">Edit</a>
+                    <a href="{% url 'editevent' event.pk %}" class="btn btn-primary">Edit</a><br>
                     <form action="{% url 'delete' event.pk %}" method="POST" class="d-inline">
                     {% csrf_token %}
                     <input type="submit" class="btn btn-danger" value="Delete">

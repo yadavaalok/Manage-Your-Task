@@ -16,8 +16,15 @@ class Event(models.Model):
         ("charity event", "charity event"),
         ("sport and competition", "sport and competition"),
     ]
+    EVENT_STATUSES = [
+        ("ACTIVE", "ACTIVE"),
+        ("DONE", "DONE"),
+        ("UNKNOWN", "UNKNOWN"),
+        ("CANCELLED", "CANCELLED"),
+    ]
     event_title = models.CharField(max_length=255)
     event_type = models.CharField(max_length=50, choices=EVENT_TYPES)
+    event_status = models.CharField(max_length=50, choices=EVENT_STATUSES, default="UNKNOWN")
     event_date = models.DateTimeField()
     event_description = models.TextField()
 
