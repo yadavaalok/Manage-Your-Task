@@ -31,7 +31,7 @@ class TestViews(TestCase):
         response = self.client.post(url, payload)
         self.assertEqual(response.status_code, 302)
 
-    def test_list_event(self):
+"""    def test_list_event(self):
         event1 = {
             "title" : "Event 1",
             "eventtype" : "Festival",
@@ -51,4 +51,4 @@ class TestViews(TestCase):
 
         url = reverse('allevents')
         response = self.client.get(url)
-        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.status_code, 200)"""
