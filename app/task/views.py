@@ -22,7 +22,7 @@ class CreateEvent(View):
 		event_date = data.get('datetime')
 		event_description = data.get('description')
 
-		event = Event(event_title=event_title, event_type=event_type, event_date=event_date, event_description=event_description)
+		event = Event(event_title=event_title, event_type=event_type, event_status=event_status, event_date=event_date, event_description=event_description)
 
 		event.save()
 		return redirect('homepage')
