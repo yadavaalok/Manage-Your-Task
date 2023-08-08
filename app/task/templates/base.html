@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
         integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
         crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Our Custom CSS -->
     <link rel="stylesheet" href="{% static 'task/css/style.css' %}">
 
@@ -64,7 +65,21 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="#"><b>Reports</b></a>
+                    <a href="#reportmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><b>Reports</b></a>
+                    <ul class="collapse list-unstyled" id="reportmenu">
+                        <li>
+                            <a href="{% url 'reports' 'MONTHLY' %}"><b>Monthly</b></a>
+                        </li>
+                        <li>
+                            <a href="{% url 'reports' 'QUARTERLY' %}"><b>Quarterly</b></a>
+                        </li>
+                        <li>
+                            <a href="{% url 'reports' 'HALF YEARLY' %}"><b>Half Yearly</b></a>
+                        </li>
+                        <li>
+                            <a href="{% url 'reports' 'YEARLY' %}"><b>Yearly</b></a>
+                        </li>
+                    </ul>
                 </li>
             </ul>
         </nav>
@@ -78,10 +93,7 @@
     </div>
 	
     <!-- jQuery CDN - Slim version (=without AJAX) -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <!-- Popper.JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
-    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>    <!-- Bootstrap JS -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
     <!--Chart Js-->
 	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

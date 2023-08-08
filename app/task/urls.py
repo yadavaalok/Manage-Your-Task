@@ -9,4 +9,5 @@ urlpatterns = [
     path('eventstatus/<str:event_status>', ListEventByStatus.as_view(), name="eventstatus"),
     path('<int:pk>/delete', DeleteEvent.as_view(), name="delete"),
     path('<int:pk>/editevent', UpdateEvent.as_view(), name="editevent"),
+    path('reports/<str:period>', EventReports.as_view(), name="reports"),
 ]
