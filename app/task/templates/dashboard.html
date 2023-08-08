@@ -23,9 +23,9 @@
           <div class="card-body" id="card-title">
             <h5 class="card-title">Upcoming Events</h5>
             <ul class="card-text">
-                <a href="#"> <li>Event 1|25th Aug 2023| 4:00pm</li> </a>
-                <a href="#"> <li>Event 1|25th Aug 2023| 4:00pm</li> </a>
-                <a href="#"> <li>Event 1|25th Aug 2023| 4:00pm</li> </a>
+              {% for event in upcoming_events %}
+                <a href=""> <li>{{event.event_title}} | {{event.event_type}} | {{event.event_status}} | {{event.event_date}} | {{event.event_description}}</li> </a>
+              {% endfor %}
             </ul>
           </div>
         </div>
@@ -35,11 +35,11 @@
       <div class="col-md-6">
         <div class="card">
           <div class="card-body" id="card-title">
-            <h5 class="card-title">Events in present Month</h5>
+            <h5 class="card-title">Active Events in present Month</h5>
             <ul class="card-text">
-                <a href="#"> <li>Event 1|25th Aug 2023| 4:00pm</li> </a>
-                <a href="#"> <li>Event 1|25th Aug 2023| 4:00pm</li> </a>
-                <a href="#"> <li>Event 1|25th Aug 2023| 4:00pm</li> </a>
+              {% for present in present_month_events %}
+                <a href=""> <li>{{ present.event_title }} | {{present.event_date}}</li> </a>
+              {% endfor %}
             </ul>
           </div>
         </div>
@@ -50,22 +50,25 @@
       <div class="col-md-6">
         <div class="card">
           <div class="card-body" id="card-title">
-            <h5 class="card-title">Rescheduled/Cancelled Events</h5>
+            <h5 class="card-title">Cancelled Events</h5>
             <ul class="card-text">
-                <a href="#"> <li>Event 1|25th Aug 2023| 4:00pm</li> </a>
-                <a href="#"> <li>Event 1|25th Aug 2023| 4:00pm</li> </a>
-                <a href="#"> <li>Event 1|25th Aug 2023| 4:00pm</li> </a>
+              {% for c in cancelled_events %}
+                <a href=""> <li>{{ c.event_title }} | {{c.event_date}}</li> </a>
+              {% endfor %}
             </ul>
           </div>
         </div>
       </div>
 
-      <!-- Fourth Metric -->
       <div class="col-md-6">
         <div class="card">
           <div class="card-body" id="card-title">
-            <h5 class="card-title">Events Piechart</h5>
-            <canvas id="myPieChart" height="50" width="50"></canvas>
+            <h5 class="card-title">Events Completed</h5>
+            <ul class="card-text">
+              {% for d in done_events %}
+                <a href=""> <li>{{ d.event_title }} | {{d.event_date}}</li> </a>
+              {% endfor %}
+            </ul>
           </div>
         </div>
       </div>

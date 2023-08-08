@@ -2,11 +2,26 @@ from core.models import Event
 from django.http import JsonResponse
 from django.shortcuts import render, redirect
 from django.views import View
+from datetime import datetime
 
 class Index(View):
 
 	def get(self, request):
-		return render(request, 'dashboard.html')
+
+		upcoming_events = Event.objects.filter(event_status="ACTIVE").order_by('event_date')[:2]
+		present_month_events = Event.objects.filter(event_date__month=datetime.now().month) & Event.objects.filter(event_status="ACTIVE")
+		cancelled_events = Event.objects.filter(event_status="CANCELLED").order_by('event_date')[:5]
+		done_events = Event.objects.filter(event_status="DONE").order_by('-event_date')[:3]
+
+		list_by_status = {"status": [], "count": []}
+		for status in ["ACTIVE", "DONE", "CANCELLED", "UNKNOWN"]:
+			data = Event.objects.filter(event_status=status)
+			count = data.count()
+			list_by_status["status"].append(status)
+			list_by_status["count"].append(count)
+
+		print(list_by_status)
+		return render(request, 'dashboard.html', {'upcoming_events': upcoming_events, 'present_month_events': present_month_events, 'cancelled_events': cancelled_events, 'done_events': done_events, 'list_by_status': list_by_status})
 
 
 class CreateEvent(View):

@@ -216,7 +216,7 @@ a.article, a.article:hover {
     transition: all 0.3s;
 }
 
-#card-title ul a li:hover {
+.card-text li:hover {
     color: #031b7a;
 }
 
