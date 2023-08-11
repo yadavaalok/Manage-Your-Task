@@ -12,8 +12,17 @@
 <style>
 body {
 	color: #fff;
-	background: #63738a;
+	background: #7386D5;
 	font-family: 'Roboto', sans-serif;
+}
+.jumbotron {
+    background-color: #7386D5;
+}
+.jumbotron h1{
+    text-align: center;
+    font-size: 3rem;
+    font-weight: bolder;
+    font-family: italic;
 }
 .login-form {
     width: 450px;
@@ -44,9 +53,19 @@ body {
 </style>
 </head>
 <body>
+    <div class="container">
+        <div class="jumbotron">
+          <h1>Welcome to Event Manager Portal</h1>
+        </div>
+      </div>
 <div class="login-form">
     <form action="{% url 'login' %}" method="post">
         {% csrf_token %}
+        {% if msg %}
+		<div class="alert alert-danger" role="alert">
+			{{ msg }}
+		</div>
+		{% endif %}
         <h2 class="text-center">Log in</h2>       
         <div class="form-group">
             <input type="text" class="form-control" name="username" placeholder="Username" required="required">

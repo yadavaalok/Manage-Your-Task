@@ -13,7 +13,7 @@
 <style>
 body {
 	color: #fff;
-	background: #63738a;
+	background: #7386D5;
 	font-family: 'Roboto', sans-serif;
 }
 .form-control {
@@ -105,6 +105,11 @@ body {
 <div class="signup-form">
     <form action="{% url 'register' %}" method="post">
 		{% csrf_token %}
+		{% if msg %}
+		<div class="alert alert-danger" role="alert">
+			{{ msg }}
+		</div>
+		{% endif %}
 		<h2>Register</h2>
         <div class="form-group">
 			<div class="row">
