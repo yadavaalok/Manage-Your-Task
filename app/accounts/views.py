@@ -95,3 +95,9 @@ class Logout(View):
     def get(self, request):
         request.session.clear()
         return redirect('login')
+    
+
+class Profile(View):
+
+    def get(self, request):
+        return render(request, 'profile.html')

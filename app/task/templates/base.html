@@ -26,7 +26,7 @@
         <!-- Sidebar Holder -->
         <nav id="sidebar">
             <div class="sidebar-header">
-                <h3>Event Manager</h3>
+                <a href="/event"><h3>Event Manager</h3></a>
             </div>
 
             <ul class="list-unstyled components">
@@ -65,21 +65,10 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="#reportmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><b>Reports</b></a>
-                    <ul class="collapse list-unstyled" id="reportmenu">
-                        <li>
-                            <a href="{% url 'reports' 'MONTHLY' %}"><b>Monthly</b></a>
-                        </li>
-                        <li>
-                            <a href="{% url 'reports' 'QUARTERLY' %}"><b>Quarterly</b></a>
-                        </li>
-                        <li>
-                            <a href="{% url 'reports' 'HALF YEARLY' %}"><b>Half Yearly</b></a>
-                        </li>
-                        <li>
-                            <a href="{% url 'reports' 'YEARLY' %}"><b>Yearly</b></a>
-                        </li>
-                    </ul>
+                    <a href="{% url 'profile' %}"><b>Profile</b></a>
+                </li> 
+                <li>
+                    <a href="{% url 'logout' %}"><b>Logout</b></a>
                 </li>
             </ul>
         </nav>

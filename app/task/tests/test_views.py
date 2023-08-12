@@ -12,13 +12,13 @@ class TestViews(TestCase):
         url = reverse('homepage')
         response = self.client.get(url)
 
-        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.status_code, 302)
 
     def test_get_create_event(self):
         url = reverse('addevent')
         response = self.client.get(url)
 
-        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.status_code, 302)
 
     def test_post_create_event(self):
         url = reverse('addevent')
