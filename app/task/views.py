@@ -2,7 +2,7 @@ from core.models import Event
 from django.shortcuts import render, redirect
 from django.views import View
 from datetime import datetime
-from core.management.commands.authenticate import is_authenticated
+from core.management.commands.authenticate import is_not_authenticated
 
 
 class Index(View):
@@ -10,7 +10,7 @@ class Index(View):
 	def get(self, request):
 
 		#Checking whether is Logged in
-		if is_authenticated(request.session):
+		if is_not_authenticated(request.session):
 			return redirect('login')
 		
 		upcoming_events = Event.objects.filter(event_status="ACTIVE").order_by('event_date')[:2]
@@ -32,13 +32,13 @@ class CreateEvent(View):
 
 	def get(self, request):
 		#Checking whether is Logged in
-		if is_authenticated(request.session):
+		if is_not_authenticated(request.session):
 			return redirect('login')
 		return render(request, 'event.html')
 
 	def post(self, request):
 		#Checking whether is Logged in
-		if is_authenticated(request.session):
+		if is_not_authenticated(request.session):
 			return redirect('login')
 		data = request.POST
 		event_title = data.get('title')
@@ -57,7 +57,7 @@ class ListEventByType(View):
 
 	def get(self, request, event_type):
 		#Checking whether is Logged in
-		if is_authenticated(request.session):
+		if is_not_authenticated(request.session):
 			return redirect('login')
 		
 		if event_type == 'corporate':
@@ -74,7 +74,7 @@ class ListEventByStatus(View):
 
 	def get(self, request, event_status):
 		#Checking whether is Logged in
-		if is_authenticated(request.session):
+		if is_not_authenticated(request.session):
 			return redirect('login')
 		
 		if event_status == 'ACTIVE':
@@ -101,14 +101,14 @@ class UpdateEvent(View):
 
 	def get(self, request, pk):
 		#Checking whether is Logged in
-		if is_authenticated(request.session):
+		if is_not_authenticated(request.session):
 			return redirect('login')
 		event = Event.objects.get(pk=pk)
 		return render(request, 'editevent.html', {'event': event})
 
 	def post(self, request, pk):
 		#Checking whether is Logged in
-		if is_authenticated(request.session):
+		if is_not_authenticated(request.session):
 			return redirect('login')
 		event = Event.objects.get(pk=pk)
 

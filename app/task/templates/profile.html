@@ -18,37 +18,37 @@
                     <div class="col-md-12">
                         <form>
                           <div class="form-group row">
-                            <label for="username" class="col-4 col-form-label">User Name*</label> 
+                            <label for="username" class="col-4 col-form-label">User Name</label> 
                             <div class="col-8">
-                              <input id="username" name="username" placeholder="Username" class="form-control here" required="required" type="text">
+                              <input id="username" name="username" placeholder="Username" class="form-control here" value="{{ user.username }}" type="text">
                             </div>
                           </div>
                           <div class="form-group row">
                             <label for="name" class="col-4 col-form-label">First Name</label> 
                             <div class="col-8">
-                              <input id="name" name="firstname" placeholder="First Name" class="form-control here" type="text">
+                              <input id="name" name="firstname" placeholder="First Name" class="form-control here" value="{{ user.first_name }}" type="text">
                             </div>
                           </div>
                           <div class="form-group row">
                             <label for="lastname" class="col-4 col-form-label">Last Name</label> 
                             <div class="col-8">
-                              <input id="lastname" name="lastname" placeholder="Last Name" class="form-control here" type="text">
+                              <input id="lastname" name="lastname" placeholder="Last Name" class="form-control here" value="{{ user.last_name }}" type="text">
                             </div>
                           </div>
                           <div class="form-group row">
-                            <label for="email" class="col-4 col-form-label">Email*</label> 
+                            <label for="email" class="col-4 col-form-label">Email</label> 
                             <div class="col-8">
-                              <input id="email" name="email" placeholder="Email" class="form-control here" required="required" type="text">
+                              <input id="email" name="email" placeholder="Email" class="form-control here" value="{{ user.email }}" type="text">
                             </div>
                           </div>
                           <div class="form-group row">
                             <div class="offset-4 col-8">
-                              <button name="submit" type="submit" class="btn btn-primary">Edit My Profile</button>
+                              <a href="{% url 'update_profile' user.pk %}" class="btn btn-primary">Edit My Profile</a>
                             </div>
                           </div>
                           <div class="form-group row">
                             <div class="offset-4 col-8">
-                              <button name="submit" type="submit" class="btn btn-primary">Reset Password</button>
+                              <a href="{% url 'reset' %}" class="btn btn-primary">Reset Password</a>
                             </div>
                           </div>
                         </form>
